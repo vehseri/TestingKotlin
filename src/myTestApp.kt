@@ -1,4 +1,4 @@
-/*fun main (){
+fun main (){
     val fina = Dog("Fina",15,"Saluki")
     dogInfo(fina,fina.dogWeight)
     println("Enter new dogs weight:")
@@ -22,7 +22,7 @@ class Dog (val dogName: String, dogWeight_param: Int, dogBreed_param: String){
     set(value) {
         if (value > 0) field = value
     }
-}*/
+}
 open class Animal {
     open val image = ""
     open val food = ""
