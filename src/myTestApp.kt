@@ -1,4 +1,4 @@
-fun main (){
+/* fun main (){
    /* val fina = Dog("Fina",15,"Saluki")
     dogInfo(fina,fina.dogWeight)
     println("Enter new dogs weight:")
@@ -97,4 +97,6 @@ class Wolf : Canine(){
          //some code
          animal.makeNoise()
      }
- }
+ }*/
+
+// Chapter 6 code starts here
