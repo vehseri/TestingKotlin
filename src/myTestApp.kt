@@ -1,5 +1,5 @@
 fun main (){
-    val fina = Dog("Fina",15,"Saluki")
+   /* val fina = Dog("Fina",15,"Saluki")
     dogInfo(fina,fina.dogWeight)
     println("Enter new dogs weight:")
     var newDogWeight = readLine()?.toInt()
@@ -21,7 +21,12 @@ class Dog (val dogName: String, dogWeight_param: Int, dogBreed_param: String){
     var dogWeight = dogWeight_param
     set(value) {
         if (value > 0) field = value
-    }
+    }*/
+    //var animal1 = Animal()
+    // animal1.makeNoise()
+    var animal2 = Hippo ()
+    animal2.eat()
+    animal2.roam()
 }
 open class Animal {
     open val image = ""
@@ -36,9 +41,43 @@ open class Animal {
         println("Lets eat")
     }
     open fun roam(){
-        println("We are roaming")
+        println("We are roaming. $image")
     }
     fun sleep(){
         println("Lets sleeeeeeep")
+    }
+}
+class Hippo : Animal() {
+    override val image = "hippo.jpg"
+    override val food = "grass"
+    override val habitat = "water"
+
+    override fun makeNoise() {
+        println("Arrrghhhhh!")
+    }
+
+    override fun eat() {
+        println("The Hippo is eating $food. He lives in $habitat")
+    }
+}
+open class Canine : Animal() {
+    override fun roam() {
+        println("The Canine is roaming")
+    }
+}
+class Wolf : Canine(){
+    override val image: String
+        get() = "wolf.jpg"
+    override val food: String
+        get() = "meat"
+    override val habitat: String
+        get() = "forest"
+
+    override fun makeNoise() {
+        println("Woooooooooo")
+    }
+
+    override fun eat() {
+        println("The wolf is eating $food")
     }
 }
