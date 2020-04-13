@@ -22,11 +22,22 @@ class Dog (val dogName: String, dogWeight_param: Int, dogBreed_param: String){
     set(value) {
         if (value > 0) field = value
     }*/
-    //var animal1 = Animal()
+    /*var animal1 = Animal()
     // animal1.makeNoise()
     var animal2 = Hippo ()
     animal2.eat()
-    animal2.roam()
+    animal2.roam()*/
+    val animals = arrayOf(Hippo(), Wolf())
+    for (item in animals){
+        item.makeNoise()
+        item.roam()
+        item.eat()
+    }
+    val vet = Vet()
+    val wolf = Wolf()
+    val hippo = Hippo()
+    vet.giveShot(wolf)
+    vet.giveShot(hippo)
 }
 open class Animal {
     open val image = ""
@@ -53,7 +64,7 @@ class Hippo : Animal() {
     override val habitat = "water"
 
     override fun makeNoise() {
-        println("Arrrghhhhh!")
+        println("Arrrghhhhh! Hippo is making noise.")
     }
 
     override fun eat() {
@@ -74,10 +85,16 @@ class Wolf : Canine(){
         get() = "forest"
 
     override fun makeNoise() {
-        println("Woooooooooo")
+        println("Woooooooooo. Wolf is making noise.")
     }
 
     override fun eat() {
         println("The wolf is eating $food")
     }
 }
+ class Vet {
+     fun giveShot (animal: Animal){
+         //some code
+         animal.makeNoise()
+     }
+ }
