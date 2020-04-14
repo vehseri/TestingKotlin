@@ -1,4 +1,4 @@
-/* fun main (){
+fun main (){
    /* val fina = Dog("Fina",15,"Saluki")
     dogInfo(fina,fina.dogWeight)
     println("Enter new dogs weight:")
@@ -39,18 +39,18 @@ class Dog (val dogName: String, dogWeight_param: Int, dogBreed_param: String){
     vet.giveShot(wolf)
     vet.giveShot(hippo)
 }
-open class Animal {
-    open val image = ""
-    open val food = ""
-    open val habitat = ""
+abstract class Animal {
+    abstract val image: String
+    abstract val food: String
+    abstract val habitat: String
     var hunger = 10
 
-    open fun makeNoise(){
+    abstract fun makeNoise() /*{
         println("Make some noise")
-    }
-    open fun eat(){
+    }*/
+    abstract fun eat() /*{
         println("Lets eat")
-    }
+    }*/
     open fun roam(){
         println("We are roaming. $image")
     }
@@ -71,7 +71,7 @@ class Hippo : Animal() {
         println("The Hippo is eating $food. He lives in $habitat")
     }
 }
-open class Canine : Animal() {
+abstract class Canine : Animal() {
     override fun roam() {
         println("The Canine is roaming")
     }
@@ -97,6 +97,4 @@ class Wolf : Canine(){
          //some code
          animal.makeNoise()
      }
- }*/
-
-// Chapter 6 code starts here
+ }
