@@ -39,7 +39,7 @@ class Dog (val dogName: String, dogWeight_param: Int, dogBreed_param: String){
     vet.giveShot(wolf)
     vet.giveShot(hippo)
 }
-abstract class Animal {
+abstract class Animal: Roamable {
     abstract val image: String
     abstract val food: String
     abstract val habitat: String
@@ -51,7 +51,7 @@ abstract class Animal {
     abstract fun eat() /*{
         println("Lets eat")
     }*/
-    open fun roam(){
+    override fun roam(){
         println("We are roaming. $image")
     }
     fun sleep(){
@@ -98,3 +98,11 @@ class Wolf : Canine(){
          animal.makeNoise()
      }
  }
+interface Roamable {
+    fun roam()
+}
+class Vehicle : Roamable {
+    override fun roam() {
+        println ("The Vehicle is roaming")
+    }
+}
