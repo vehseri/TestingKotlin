@@ -38,6 +38,12 @@ class Dog (val dogName: String, dogWeight_param: Int, dogBreed_param: String){
     val hippo = Hippo()
     vet.giveShot(wolf)
     vet.giveShot(hippo)
+
+    val roamables = arrayOf (Hippo(), Wolf(), Vehicle())
+    for (item in roamables){
+        item.roam()
+        if (item is Animal) item.eat()
+    }
 }
 abstract class Animal: Roamable {
     abstract val image: String
